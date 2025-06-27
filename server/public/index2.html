@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Form</title>
+    <script src="todo.js"></script>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="createFrontendTask(); return false;" class="task-form">
+            <label for="task">Task</label>
+            <input type="text" id="taskname" placeholder="Name der Aufgabe">
+            <label for="duedate">Duedate</label>
+            <input 
+            type="date"
+            id="duedate"
+            name="trip-start"
+ />
+
+            <label for="responsible">Verantwortlicher</label>
+            <input type="text" id="responsible" placeholder="Person eingeben">
+
+            <label for="category">Kategorie</label>
+            <select id="category">
+                <option value="">Bitte wählen...</option>
+                
+                <option value="Arbeit">Arbeit</option>
+                <option value="Privat">Privat</option>
+                <option value="Einkaufen">Einkaufen</option>
+            </select>
+
+            <label for="Priorität">Priorität</label>
+            <select id="priority">
+                <option value="">Bitte wählen...</option>
+                <option value="sehr hoch">sehr hoch</option>
+                <option value="hoch">hoch</option>
+                <option value="mittel">mittel</option>
+                <option value="niedrig">niedrig</option>
+            </select>
+
+            <label for="description">Beschreibung</label>
+            <textarea id="description" placeholder="Beschreibung hinzufügen"></textarea>
+
+            <button class="add" type="submit">add</button>
+        </form>
+    </div>
+</body>
+</html>

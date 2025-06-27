@@ -1,0 +1,415 @@
+body {
+  background-color: white;
+}
+
+.darkmode {
+  color: black;
+  background-color: white;
+  border: 5px solid white;
+}
+
+.button {
+  margin: 20px;
+  display: flex;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: #17355b;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #004987;
+}
+
+li {
+  color: black;
+  background-color: #17355b;
+  margin: 10px;
+  list-style-type: none;
+  font-size: 30px;
+
+  text-align: center;
+  margin-left: 550px;
+  margin-right: 550px;
+  padding-bottom: 0px;
+  border-radius: 15px;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox .checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.checkbox input:checked + .checkmark::after {
+  content: "✓";
+  font-size: 16px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox input:checked + .checkmark {
+  background: #007bff;
+  border-color: #007bff;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.title {
+  color: black;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.warning {
+  background-color: #f28c28;
+}
+
+.done {
+  margin-top: 40px;
+}
+
+.erledigt {
+  color: black;
+  padding: 20px;
+  margin: 10px;
+  font-size: 400px;
+  font-size: 30px;
+  text-align: center;
+  margin-left: 550px;
+  margin-right: 550px;
+  padding-bottom: 0px;
+}
+
+.label {
+  color: white;
+  padding: 10px;
+  padding-right: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: #17355b;
+}
+
+#taskpriority {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+#Kategorie {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+#Duedate {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.regler {
+  width: 120px;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  border-radius: 10px;
+}
+
+.darkmode {
+  position: absolute;
+  top: 18%;
+  right: 5%;
+  color: black;
+  background-color: white;
+  border: 5px solid white;
+}
+
+.list {
+  margin: 30px;
+}
+
+.spalte {
+  margin-left: 20px;
+}
+
+p {
+  padding: 0px;
+
+  margin: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+#text {
+  border-radius: 10px;
+}
+
+.switch {
+  position: absolute;
+  top: 14%;
+  right: 6%;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  z-index: 1;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #17355b;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #17355b;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -30px;
+}
+
+.delete-button svg {
+  width: 25px;
+  height: 20px;
+  fill: red;
+  margin-left: 600px;
+}
+
+.delete-button:hover svg {
+  fill: darkred;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.task-actions {
+  display: flex;
+}
+
+.edit-button,
+.delete-button {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: grey;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: white;
+}
+
+.sidebar-content {
+  padding: 8px 8px 8px 32px;
+}
+
+.edit {
+  text-decoration: none;
+  color: white;
+  margin-left: 20px;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: grey;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebaredit {
+  background: #17355b;
+  padding: 30px 30px 20px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.form {
+  margin-top: 5px;
+  margin-left: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  resize: none;
+}
+
+.edit-button {
+  margin-bottom: 30px;
+  margin-top: -50px;
+}
+
+#category {
+  margin-top: 5px;
+  margin-left: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  resize: none;
+}
+
+.form {
+  margin-top: 5px;
+  margin-left: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  resize: none;
+}
+
+
+.hidden-id{
+  display: none;
+}
+
+.filteranwenden{
+  padding: 10px;
+  font-size: 15px;
+}
+
+
+
+#filter-beschreibung {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.task-fadeout {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+#tasknote {
+    min-height: 100px;
+    white-space: pre-wrap;
+    font-family: monospace;
+}

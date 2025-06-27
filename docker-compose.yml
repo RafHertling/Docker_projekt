@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  app:
+    build: ./server
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    volumes:
+      - ./server:/app
+
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpw
+      MYSQL_DATABASE: todo
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpw
+    ports:
+      - "3306:3306"

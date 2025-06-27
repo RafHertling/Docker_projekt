@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do Liste</title>
+    <script src="todo.js"></script>
+    <link id="theme-style" rel="stylesheet" href="darkmode.css" />
+  </head>
+  <body>
+    <h1 class="title">Aufgaben</h1>
+
+    <header class="container">
+      <label class="label" for="Textsearch">Titel</label>
+      <input id="text" type="text" oninput="handleFilter()"/>
+      <label class="label" id="priority" for="priority">Priorität</label>
+      <select id="filter-priority" onchange="handleFilter()">
+        <option value="">Bitte wählen...</option>
+        <option value="sehr hoch">sehr hoch</option>
+        <option value="hoch">hoch</option>
+        <option value="mittel">mittel</option>
+        <option value="niedrig">niedrig</option>
+      </select>
+      <label class="label" for="Kategorie">Kategorie</label>
+      <select id="filter-kategorie" onchange="handleFilter()">
+        <option value="">Bitte wählen...</option>
+        <option value="Arbeit">Arbeit</option>
+        <option value="Privat">Privat</option>
+        <option value="Einkaufen">Einkaufen</option>
+      </select>
+      <label class="label" for="Duedate">Duedate</label>
+      <input
+        type="date"
+        id="Duedate"
+        name="trip-start"
+        onchange="handleFilter()"
+      />
+
+      <label class="label" for="filter-beschreibung">Beschreibung</label>
+      <input id="filter-beschreibung" type="text" oninput="handleFilter()"/>
+    </header>
+
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle" />
+      <span class="slider round"></span>
+    </label>
+
+    <p class="darkmode">Lightmode</p>
+
+    <ul class="list collection" id="listOpen"></ul>
+    <h2 class="erledigt">Erledigt</h2>
+    <ul class="list collection" id="listClosed"></ul>
+
+    <button type="submit" class="button"><a href="index2.html">+</a></button>
+
+    <div id="sidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"
+        >×</a
+      >
+      <div class="sidebar-content">
+        <div class="sidebaredit">
+          <form class="task-form">
+            <input type="hidden" id="taskID" />
+            <label class="category" for="task">Task</label>
+            <input
+              type="text"
+              id="taskname"
+              class="form"
+              placeholder="Name der Aufgabe"
+            />
+            <label class="category" for="responsible">Verantwortlicher</label>
+            <input
+              type="text"
+              id="taskverantwortlicher"
+              class="form"
+              placeholder="Person eingeben"
+            />
+
+            <label class="category" for="category">Kategorie</label>
+            <select id="taskkategorie" class="form">
+              <option value="">Bitte wählen...</option>
+              <option value="Arbeit">Arbeit</option>
+              <option value="Privat">Privat</option>
+              <option value="Einkaufen">Einkaufen</option>
+            </select>
+
+            <label class="category" for="Priorität">Priorität</label>
+            <select class="form" id="taskpriority">
+              <option value="">Bitte wählen...</option>
+              <option value="sehr hoch">sehr hoch</option>
+              <option value="hoch">hoch</option>
+              <option value="mittel">mittel</option>
+              <option value="niedrig">niedrig</option>
+            </select>
+
+            <label class="category" for="description">Beschreibung</label>
+            <input
+              type="text"
+              id="taskbeschreibung"
+              class="form"
+              placeholder="Beschreibung der Aufgabe"
+            />
+            <label class="category" for="category" for="notes0">Notizen</label>
+            <input type="text"
+            id="tasknote"
+            class="form"
+            placeholder="Notiz">
+            <button
+              class="edit"
+              type="edit"
+              onPressButton="closeSidebar"
+              onclick="changeFrontendTask(event); setNote()">
+              Edit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("theme-toggle");
+        const themeLink = document.getElementById("theme-style");
+
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "light") {
+          themeLink.href = "lightmode.css";
+          toggle.checked = true;
+        }
+
+        toggle.addEventListener("change", function () {
+          if (this.checked) {
+            themeLink.href = "lightmode.css";
+            localStorage.setItem("theme", "light");
+          } else {
+            themeLink.href = "darkmode.css";
+            localStorage.setItem("theme", "dark");
+          }
+        });
+
+        returnTask();
+      });
+
+
+    </script>
+  </body>
+</html>
