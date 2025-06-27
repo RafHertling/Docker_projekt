@@ -34,7 +34,6 @@ async function deleteTaskFromServer(ID) {
   }
 }
 
-// Passe createTask an:
 function createTask(
   name,
   priorität,
